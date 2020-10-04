@@ -7,12 +7,7 @@
 //
 //  Precision of vectors is taken upto 6 decimals
 
-#include <algorithm>
-#include <cmath>
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <iomanip>
 
 double dot_product (double x[], double y[], int c) {
     double sum = 0;
@@ -63,12 +58,12 @@ int main()
     
     if(c < r)
     {
-        cout << "Dimension of vector is less than number of vector, hence \n first "<<c<<" vectors are orthonormalized";
+        cout << "Dimension of vector is less than number of vector, hence \n first "<< c <<" vectors are orthogonalised" << endl;
         r = c;
     }
     
     int k = 1;
-    double B[r][c];    // a 2-D array for storing orthonormalized vectors
+    double B[r][c];    // a 2-D array for storing orthogonalised vectors
     
     while (k <= r) {
         if (k == 1) {
