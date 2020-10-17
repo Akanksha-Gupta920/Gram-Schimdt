@@ -1,13 +1,13 @@
-//
-//  main.cpp
-//  Gram Schimdt Orthonormalisation
-//
-//  Created by akanksha gupta on 02/10/20.
-//  Copyright © 2020 akanksha gupta. All rights reserved.
-//
-//  Precision of vectors is taken upto 6 decimals
+/*  Gram Schimdt Orthogonalisation  Created by akanksha gupta on 02/10/20.
+    Copyright © 2020 akanksha gupta. All rights reserved.
+    used double as datatype for storing vectors (in maths) as inputs are integers. 
+    Change it to long double to increase digits of precision in case of decimal inputs.
+ */
 
 #include <iostream>
+
+using namespace std;
+
 
 double dot_product (double x[], double y[], int c) {
     double sum = 0;
@@ -25,37 +25,18 @@ void projection (double x[], double y[], double temp[], int c){
     for (int i = 0; i < c; i++) {
       temp[i]  = y[i] * factor;
     }
-    for (int i = 0; i < c; i++) {
-      
-    }
 }
 
-
-using namespace std;
-
-int main()
-{
-    cout << "Enter the dimension of your vectors"<<endl;
-    int c;
-    cin >> c;
-    cout << "Enter the number of vectors you will enter "<<endl;
-    int r;
-    cin >> r;
-    
-    double A[r][c];   // a 2-D array for storing all vectors
-    
-    // storing vectors in arrat A
-    for(int i = 0; i < r; i++)
-    {
-        cout << "Enter vector "<<i+1<<endl;
-        for(int j = 0; j < c; j++)
-        {
-            cout << "Value "<<j+1<<"th of vector: ";
-            cin >> A[i][j];
+void display(){
+    for(int i = 0; i < r; i++){
+        for(int j = 0; j < c; j++){
+            cout << B[i][j] << " ";
         }
         cout << endl;
     }
-    
+}
+
+void gram_schimdt_orthogonalisation(int c, int r, double A[]){
     if(c < r)
     {
         cout << "Dimension of vector is less than number of vector, hence \n first "<< c <<" vectors are orthogonalised" << endl;
@@ -92,14 +73,31 @@ int main()
             }
             
         }
-        k++;
     }
+}
+
+int main()
+{
+    cout << "Enter the dimension of your vectors"<<endl;
+    int c;
+    cin >> c;
+    cout << "Enter the number of vectors you will enter "<<endl;
+    int r;
+    cin >> r;
     
-    for(int i = 0; i < r; i++){
-        for(int j = 0; j < c; j++){
-            cout << B[i][j] << " ";
+    double A[r][c];   // a 2-D array for storing all vectors
+    
+    // storing vectors in array A
+    for(int i = 0; i < r; i++)
+    {
+        cout << "Enter vector "<<i+1<<endl;
+        for(int j = 0; j < c; j++)
+        {
+            cout << "Value "<<j+1<<"th of vector: ";
+            cin >> A[i][j];
         }
         cout << endl;
     }
     
+    gram_schimdt_orthogonalisation(A);
 }
