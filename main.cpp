@@ -1,4 +1,4 @@
-/*  Gram Schimdt Orthogonalisation  Created by akanksha gupta on 02/10/20.
+/*  Gram Schmidt Orthogonalisation  Created by akanksha gupta on 02/10/20.
     Copyright © 2020 akanksha gupta. All rights reserved.
     Used double as datatype for storing vectors (in maths) as inputs are integers.
     Change it to long double to increase digits of precision in case of decimal inputs.
